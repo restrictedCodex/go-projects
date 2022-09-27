@@ -1,23 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
+	fmt.Println("Welcome to Time study")
+	presentTime := time.Now()
+	fmt.Println(presentTime)
 
-	// variable types
-	var username string = "Prathis"
-	fmt.Println(username)
-	fmt.Printf("variable is of the type: %T \n", username)
+	fmt.Println(presentTime.Format("01-02-2006"))
+	fmt.Println(presentTime.Format("01-02-2006 Monday"))
 
-	var isLoggedIn bool = false
-	fmt.Println(isLoggedIn)
-	fmt.Printf("variable is of the type: %T \n", isLoggedIn)
-
-	var smallval uint16 = 8376
-	fmt.Println(smallval)
-	fmt.Printf("variable is of the type: %T \n", smallval)
-
-	var float4 float32 = 83.78678687
-	fmt.Println(float4)
-	fmt.Printf("variable is of the type: %T \n", float4)
+	createDate := time.Date(2045, time.May, 89, 16, 45, 0, 0, time.Now().Location())
+	fmt.Println(createDate)
 }
