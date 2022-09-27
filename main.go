@@ -2,17 +2,39 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"sort"
 )
 
 func main() {
-	fmt.Println("Welcome to Time study")
-	presentTime := time.Now()
-	fmt.Println(presentTime)
+	fmt.Println("Welcome to Slices")
 
-	fmt.Println(presentTime.Format("01-02-2006"))
-	fmt.Println(presentTime.Format("01-02-2006 Monday"))
+	var fruitList = []string{"Apple", "grape", "watermelon"}
+	fmt.Printf("Type of data: %T \n", fruitList)
 
-	createDate := time.Date(2045, time.May, 89, 16, 45, 0, 0, time.Now().Location())
-	fmt.Println(createDate)
+	fruitList = append(fruitList, "Mango")
+	fmt.Println(fruitList)
+
+	fruitList = append(fruitList[2:])
+	fmt.Println(fruitList)
+
+	highScore := make([]int, 4)
+
+	highScore[0] = 234
+	highScore[1] = 994
+	highScore[2] = 114
+	highScore[3] = 444
+
+	highScore = append(highScore, 456, 677)
+
+	sort.Ints(highScore)
+
+	fmt.Println(highScore)
+
+	//how to remove value from slice
+
+	var courses = []string{"react", "swift", "js", "kotlin", "c++"}
+	fmt.Println(courses)
+	var index int = 1
+	courses = append(courses[:index], courses[index+1:]...)
+	fmt.Println(courses)
 }
